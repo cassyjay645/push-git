@@ -1,0 +1,25 @@
+name: 'push-git'
+description: 'git push to github repo'
+author: 'cj645'
+branding:
+  icon: upload-cloud
+  color: orange
+inputs:
+  github_token:
+    description: 'gitHub/pat token'
+    required: false
+    default: ${{ github.token }}
+  github_url:
+    description: 'github url'
+    required: false
+    default: ${{ github.server_url }}
+  branch:
+    description: 'branch to be used'
+    required: false
+  repository:
+    description: 'Repository name. Default: ${GITHUB_REPOSITORY}'
+    default: ''
+    required: false
+runs:
+  using: 'node20'
+  main: 'start.js'
